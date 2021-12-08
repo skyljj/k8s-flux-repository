@@ -1,1 +1,1 @@
-# k8s-flux-repository
+# Flux repository
