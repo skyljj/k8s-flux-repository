@@ -377,17 +377,14 @@ spec:
       containers:
         - args:
             - --port=9097
-            - --logout-url=
             - --pipelines-namespace=tekton-pipelines
             - --triggers-namespace=tekton-pipelines
             - --read-only=false
             - --csrf-secure-cookie=false
             - --log-level=info
             - --log-format=json
-            - --namespace=
             - --openshift=false
             - --stream-logs=false
-            - --external-logs=
           env:
             - name: INSTALLED_NAMESPACE
               valueFrom:
