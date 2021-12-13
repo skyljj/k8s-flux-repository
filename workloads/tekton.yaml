@@ -606,7 +606,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: tekton.dev/pipeline
-        image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller@sha256:3bd9da03a6c4faac76c57e743daf06e0748b2c0cffade1f8e27917cc71e8554e
+        image: rootk8smyexampledev.azurecr.cn/tekton/controller:latest 
         name: tekton-pipelines-controller
         volumeMounts:
         - mountPath: /etc/config-logging
@@ -638,7 +638,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook@sha256:48cfcc0ec4898143a79e6b014f8011781cfffb543a845c4d138886d362d71492
+        image: rootk8smyexampledev.azurecr.cn/tekton/webhook:latest 
         name: webhook
         volumeMounts:
         - mountPath: /etc/config-logging
