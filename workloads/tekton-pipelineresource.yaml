@@ -8,9 +8,7 @@ spec:
   type: git
   params:
     - name: url
-      value: https://github.com/stefanprodan/podinfo.git
-    - name: revision
-      value: 6.0.3
+      value: https://github.com/zembutsu/docker-sample-nginx.git
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
@@ -21,4 +19,4 @@ spec:
   type: image
   params:
     - name: url
-      value: rootk8smyexampledev.azurecr.cn/library/podinfo:6.0.3
+      value: rootk8smyexampledev.azurecr.cn/nginx:latest
