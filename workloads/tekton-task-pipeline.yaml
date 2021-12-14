@@ -34,7 +34,7 @@ spec:
       image: rootk8smyexampledev.azurecr.cn/kaniko-project/executor
       env:
         - name: "DOCKER_CONFIG"
-          value: "/builder/home/.docker/"
+          value: "/kaniko/.docker/"
       command:
         - /kaniko/executor
       args:
@@ -43,7 +43,7 @@ spec:
         - --context=$(inputs.params.pathToContext)
       volumeMounts:
         - name: docker-config
-          mountPath: /builder/home/.docker/
+          mountPath: /kaniko/.docker/
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
