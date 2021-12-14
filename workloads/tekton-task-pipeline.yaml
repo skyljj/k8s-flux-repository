@@ -22,13 +22,6 @@ spec:
     resources:
       - name: builtImage
         type: image
-  volumes:
-    - name: docker-config
-      secret:
-        secretName: docker-config
-        items:
-          - key: .dockerconfigjson
-            path: config.json
   steps:
     - name: build-and-push
       image: rootk8smyexampledev.azurecr.cn/kaniko-project/executor
@@ -41,9 +34,6 @@ spec:
         - --dockerfile=$(inputs.params.pathToDockerFile)
         - --destination=$(outputs.resources.builtImage.url)
         - --context=$(inputs.params.pathToContext)
-      volumeMounts:
-        - name: docker-config
-          mountPath: /builder/home/.docker/
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
