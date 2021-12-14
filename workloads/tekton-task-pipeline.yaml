@@ -3,6 +3,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
   name: build-docker-image-from-git-task
+  namespace: test
 spec:
   inputs:
     resources:
@@ -30,7 +31,7 @@ spec:
             path: config.json
   steps:
     - name: build-and-push
-      image: gcr.io/kaniko-project/executor
+      image: rootk8smyexampledev.azurecr.cn/kaniko-project/executor
       env:
         - name: "DOCKER_CONFIG"
           value: "/builder/home/.docker/"
@@ -48,6 +49,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
   name: build-docker-image-from-git-pipeline
+  namespace: test
 spec:
   resources:
     - name: docker-source

@@ -3,21 +3,22 @@ apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: podinfo-project-git
-  namespace: default
+  namespace: test
 spec:
   type: git
   params:
     - name: url
       value: https://github.com/stefanprodan/podinfo.git
     - name: revision
-      value: 2.1.3
+      value: 6.0.3
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: podinfo-project-image
+  namespace: test
 spec:
   type: image
   params:
     - name: url
-      value: pruzickak8smyexampledev.azurecr.io/library/podinfo:2.1.3
+      value: rootk8smyexampledev.azurecr.cn/library/podinfo:6.0.3
