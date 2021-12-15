@@ -105,25 +105,11 @@ spec:
     - nginxinfo.myexample.dev
   # define the canary analysis timing and KPIs
   analysis:
-    # schedule interval (default 60s)
-    interval: 10s
-    # max number of failed metric checks before rollback
-    threshold: 10
-    # max traffic percentage routed to canary
-    # percentage (0-100)
-    maxWeight: 50
-    # canary increment step
-    # percentage (0-100)
-    stepWeight: 5
-    # Prometheus checks
     metrics:
-    - name: request-success-rate
-      # minimum req success rate (non 5xx responses)
-      # percentage (0-100)
-      threshold: 99
+    - name: "404s percentage"
+      templateRef:
+        name: not-found-percentage
+        namespace: istio-system
+      thresholdRange:
+        max: 20
       interval: 1m
-    - name: request-duration
-      # maximum req duration P99
-      # milliseconds
-      threshold: 500
-      interval: 30s
