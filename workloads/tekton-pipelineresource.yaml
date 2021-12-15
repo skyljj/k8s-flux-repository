@@ -8,7 +8,9 @@ spec:
   type: git
   params:
     - name: url
-      value: https://github.com/zembutsu/docker-sample-nginx.git
+      value: https://github.com/skyljj/docker-sample-nginx.git
+    - name: revision
+      value: v1.1
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
@@ -19,4 +21,4 @@ spec:
   type: image
   params:
     - name: url
-      value: rootk8smyexampledev.azurecr.cn/nginx:latest
+      value: rootk8smyexampledev.azurecr.cn/nginx:1.1
