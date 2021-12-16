@@ -105,6 +105,9 @@ spec:
     - nginxinfo.myexample.dev
   # define the canary analysis timing and KPIs
   analysis:
+    interval: 1m
+    iterations: 10
+    threshold: 2
     metrics:
     - name: "404s percentage"
       templateRef:
