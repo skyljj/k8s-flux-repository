@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: podinfo-build-docker-image-from-git-pipelinerun-v1.7
+  name: podinfo-build-docker-image-from-git-pipelinerun-v1.8
   namespace: test
 spec:
   pipelineRef:
