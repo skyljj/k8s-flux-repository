@@ -10,7 +10,7 @@ spec:
     - name: url
       value: https://github.com/skyljj/docker-sample-nginx.git
     - name: revision
-      value: v1.5
+      value: v1.6
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
@@ -21,4 +21,4 @@ spec:
   type: image
   params:
     - name: url
-      value: rootk8smyexampledev.azurecr.cn/nginx:1.5
+      value: rootk8smyexampledev.azurecr.cn/nginx:1.6

@@ -116,3 +116,4 @@ spec:
       thresholdRange:
         max: 20
       interval: 1m
+  skipAnalysis: true
