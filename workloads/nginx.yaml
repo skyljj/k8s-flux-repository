@@ -106,8 +106,11 @@ spec:
   # define the canary analysis timing and KPIs
   analysis:
     interval: 1m
-    iterations: 10
+    #iterations: 5
     threshold: 2
+    maxWeight: 50
+    stepWeight: 20
+    stepWeightPromotion: 100
     metrics:
     - name: "404s percentage"
       templateRef:
